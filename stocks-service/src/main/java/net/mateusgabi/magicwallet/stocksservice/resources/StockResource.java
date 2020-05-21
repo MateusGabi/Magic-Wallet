@@ -16,8 +16,6 @@ public class StockResource {
     @RequestMapping("/{ticker}")
     public Stock getStockDetails(@PathVariable("ticker") String ticker) throws IOException {
         Stock yahooFinanceStock = YahooFinance.get(ticker);
-
-        BigDecimal price = yahooFinanceStock.getQuote().getPrice();
         return yahooFinanceStock;
     }
 }
